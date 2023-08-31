@@ -22,8 +22,8 @@ pipeline {
                 sshagent(credentials: ['dev-server']) {
                     sh '''
                         [ -d ~/.ssh ] || mkdir ~/.ssh && chmod 0700 ~/.ssh
-                        ssh-keyscan -t rsa,dsa 18.140.67.8 >> ~/.ssh/known_hosts
-                        ssh ubuntu@18.140.67.8 "echo Hello"
+                        ssh-keyscan -t rsa,dsa 172.31.30.143 >> ~/.ssh/known_hosts
+                        ssh ubuntu@172.31.30.143"echo Hello"
                     '''
                 }
             }
