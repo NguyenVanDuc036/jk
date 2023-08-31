@@ -20,6 +20,10 @@ pipeline {
          stage('Deploy to Production') {
             steps {
                 sshagent(credentials: ['dev-server']) {
+                    sh '''
+                        [ -d ~/.ssh ] || mkdir ~/.ssh && chmod 0700 ~/.ssh
+                        ssh-keyscan -t rsa,dsa 18.167.230.95 >> ~/.ssh/known_hosts
+                    '''
                 }
             }
         }
