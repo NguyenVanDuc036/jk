@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Authenticate') {
             steps {
-               withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {}
+                sh "echo -n ${env.DOCKER_TOKEN} | docker login -u ${env.DOCKER_USER} --password-stdin"
             }
         }
 
