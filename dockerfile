@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-COPY ./api-server ./
+COPY ..
 
 RUN npm install
 
