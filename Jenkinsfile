@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sshagent(credentials: ['dev-server']) {
                     sh '''
-                        ssh ubuntu@172.31.30.143 "echo Hello"
+                        ssh ubuntu@18.140.67.8 "echo Hello"
                     '''
                 }
             }
