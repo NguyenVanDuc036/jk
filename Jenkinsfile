@@ -16,5 +16,13 @@ pipeline {
                 }
             }
         }
+
+         stage('Deploy to Production') {
+            steps {
+                sshagent(credentials: ['dev-server']) {
+
+                }
+            }
+        }
     }
 }
